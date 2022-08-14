@@ -14,19 +14,10 @@ const Institute = () => {
   const [progress , setProgress] = useState(0);
   const [selectedFile, setSelectedFile] = useState([]);
   const [url,setURL] = useState("");
-  const S3_BUCKET =process.env.REACT_APP_BUCKET_NAME;
-  const REGION =process.env.REACT_APP_REGION_NAME;
+  // const S3_BUCKET =process.env.REACT_APP_BUCKET_NAME;
+  // const REGION =process.env.REACT_APP_REGION_NAME;
 
 
-AWS.config.update({
-    accessKeyId: 'AKIA3GZAUQOACJKGCKGX',
-    secretAccessKey: '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'
-})
-
-const myBucket = new AWS.S3({
-    params: { Bucket: "fridaynight-sih"},
-    region: 'ap-south-1',
-})
 
    
 
