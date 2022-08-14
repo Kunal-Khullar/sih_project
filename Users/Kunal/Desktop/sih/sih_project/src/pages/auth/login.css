@@ -1,0 +1,75 @@
+body{
+    overflow-x: hidden;
+}
+.form-container{
+    width: 90%;
+    margin: auto;
+    margin: 1rem;
+   }
+   .mybtn{
+       background:lightseagreen !important;
+       color: snow !important;
+       width: 8rem !important;
+       border: 10px !important;
+       height: 2.6rem !important;
+       font-size: 1.1rem;
+       align-items: center !important;
+       margin: 1.5rem 0 0.5rem 9rem;
+   }
+   .mybtn2{
+    background:lightseagreen !important;
+    color: snow !important;
+    width: 8rem !important;
+    border: 10px !important;
+    height: 2.6rem !important;
+    font-size: 1.1rem;
+    align-items: center !important;
+   }
+   .mybtn:hover,.mybtn2:hover{
+       background:rgb(2, 37, 57)!important;
+     
+       border: 1px solid #35375E !important;
+   }
+#navrow{
+    padding: 1.5rem 4rem 1rem 4rem;
+    /* border-bottom: 1px solid #35375E !important; */
+}
+#navrow #col2{
+    text-align: right;
+    align-items: baseline !important;
+}
+#loginrow {
+    padding: 1.5rem 4rem 1rem 4rem;
+    background:url("https://firebasestorage.googleapis.com/v0/b/sih-project-1.appspot.com/o/10088.jpg?alt=media&token=e2c4f9f6-8a3b-417c-840c-eb17b1106930") center center no-repeat;
+    background-size: contain;
+    height:100vh;
+    /* margin-top: 4rem; */
+}
+#loginform{
+    /* background: white; */
+    border-radius: 1rem;
+    width: 80%;
+    background: rgba( 255, 255, 255, 0.45 );
+box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+backdrop-filter: blur( 12.5px );
+-webkit-backdrop-filter: blur( 12.5px );
+border-radius: 10px;
+border: 1px solid rgba( 255, 255, 255, 0.18 );
+    padding: 3rem;
+    height: 60vh;
+    margin-left: 6rem;
+}
+#loginform .form-control{
+    margin-top: .1rem;
+    margin-bottom: 0.6rem;
+}
+#usertype{
+    width: 10rem;
+    margin-bottom: 15px;
+    padding: 2px;
+}
+#id1{
+    margin-left: 1rem;
+    margin-right: 1rem;
+    font-size: 1.1rem;
+}
