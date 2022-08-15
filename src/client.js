@@ -1,6 +1,6 @@
 import { ApolloClient, createHttpLink } from "@apollo/client";
 import { cache } from "./graphql/cache";
-import { setContext } from "@apollo/client/link/context";
+//import { setContext } from "@apollo/client/link/context";
 
 const httpLink = createHttpLink({
   uri: "https://fridaynight-server.herokuapp.com/graphql",

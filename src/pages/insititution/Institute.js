@@ -10,22 +10,18 @@ const Institute = () => {
   const [subject,setSubject] = useState("");
   const [sem,setSem] = useState(0);
   const [batch,setBatch] = useState(0);
-  // const [fileData,setFileData] = useState(null);
+  const [fileData,setFileData] = useState(null);
   const [progress , setProgress] = useState(0);
   const [selectedFile, setSelectedFile] = useState([]);
   const [url,setURL] = useState("");
-  // const S3_BUCKET =process.env.REACT_APP_BUCKET_NAME;
-  // const REGION =process.env.REACT_APP_REGION_NAME;
-
-
-
-   
+  const S3_BUCKET =process.env.REACT_APP_BUCKET_NAME;
+  const REGION =process.env.REACT_APP_REGION_NAME;
 
     const uploadFile = () => {
       console.log(S3_BUCKET)
         let file;
         const ref = document.getElementById('uploadedFile').files
-        if(ref.length!=0){
+        if(ref.length!==0){
          file = ref[0];
          console.log(file)
         }
@@ -40,13 +36,13 @@ const Institute = () => {
             Key: file.name
         };
 
-        myBucket.putObject(params)
-            .on('httpUploadProgress', (evt) => {
-                setProgress(Math.round((evt.loaded / evt.total) * 100))
-            })
-            .send((err) => {
-                if (err) console.log(err)
-            })
+        // myBucket.putObject(params)
+        //     .on('httpUploadProgress', (evt) => {
+        //         setProgress(Math.round((evt.loaded / evt.total) * 100))
+        //     })
+        //     .send((err) => {
+        //         if (err) console.log(err)
+        //     })
     }
   
   return (
