@@ -1,11 +1,16 @@
 import React from "react";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { Form, Button, Row, Col } from "react-bootstrap";
+import { Form, Row, } from "react-bootstrap";
 import { useMutation, useQuery } from "@apollo/client";
+import TextField from '@mui/material/TextField';
+import {Grid, Divider, Button, Select, MenuItem, InputLabel, FormControl, Typography , FormGroup } from '@mui/material';
 import "./login.css";
 import { TEST_QUERY, TEST_MUTATION } from "../../graphql/requests";
-const Login = () => {
+import NavHome from "../../components/navbar/Nav";
+import login from '../../assets/login.gif'
+
+const Login = (props) => {
   const [user, setUser] = useState("");
   const [email, setMail] = useState("");
   const [pass, setPass] = useState("");
@@ -33,11 +38,7 @@ const Login = () => {
     if (testdata) {
       console.log(testdata);
     }
-    // if(user==="student")
-    // {
-    //  history("/student")
-    // }
-    // else if(user==="institute")
+    //if(user==="institute")
     // {
     //   history("/institue")
     // }
@@ -50,78 +51,88 @@ const Login = () => {
     //     alert("Invalid Login Credentials");
     // }
   };
+  const options = ['Institute', 'Manager']
 
   return (
-    <div>
-      <Row id="navrow">
-        <Col id="col1">
-        <h5>PROJECT LOGO</h5>
-        </Col>
-        <Col id="col2">
-        <Button className="mybtn2">Sign Up</Button>
-        </Col>
-      </Row>
-      <Row id="loginrow">
+    <div >
+     <NavHome />
+     <center>
+      <Typography variant='h3'style={{marginTop : '15vh', fontWeight: 700}}>
+        Welcome to FridayNight's portal
+      </Typography>
+      </center>
 
-        <Col>
-        
-        </Col>
-        <Col>
-          <Form className="form-container" id="loginform">
-            <Row>
-            <p id="id1">Login as:</p>
-            <Form.Group>
-              
-              <Form.Select id='usertype' name="Login As:"
-                value={user}
+      <Grid container id="loginrow" >
+      <Grid item lg={6} xs={12}> 
+      <center>
+      <img src={login} alt="login" style={{ width: '50%' ,height: 'auto', margin: '5vh'}} />
+      </center>
+      </Grid>
+      <Divider orientation="vertical" flexItem/>
+        <Grid item lg = {5.5} xs={12}>
+        <center style={{ margin : '5vh'}} >
+          <FormControl className="form-container" id="loginform">
+
+          <FormControl size="small" sx={{my: 2,  width : '100%'}}>
+            <InputLabel id="demo-select-small">Login as:</InputLabel>
+            <Select
+              labelId="demo-select-small"
+              id="demo-select-small"
+              value={user}
                 onChange={(e) => {
                   setUser(e.target.value);
                 }}
-              >
-                Login As:
-                <option value="S">Student</option>
-                <option value="I ">Insititute</option>
-                <option value="M">Manager</option>
-              </Form.Select>
-            </Form.Group>
-            </Row>
-          
-            <Form.Group controlId="formBasicEmail">
-              <Form.Label>Username</Form.Label>
-              <Form.Control
-                value={email}
-                type="text"
-                placeholder="Enter Username"
-                onChange={(e) => {
-                  setMail(e.target.value);
-                }}
-              />
-              
-            </Form.Group>
-           
-            <Form.Group controlId="formBasicPassword">
-              <Form.Label>Password</Form.Label>
-              <Form.Control
-                type="password"
-                value={pass}
-                onChange={(e) => {
-                  setPass(e.target.value);
-                }}
-                placeholder="Password"
-              />
-            </Form.Group>
-
-            <Button
-              className="mybtn"
-              onClick={conditionalLogin}
-              variant="primary"
-              type="button"
+              label="Choose"
             >
-              Login
+            <MenuItem value={'Institute'}>Institute</MenuItem>
+            <MenuItem value={'Manager'}>Manager</MenuItem>
+            </Select>
+          </FormControl>
+
+            <FormGroup controlId="formBasicEmail" >
+            <TextField 
+              sx={{  my : 2 , width : '100%'}}
+              id="filled-basic" 
+              label="User Name" 
+              variant="outlined" 
+              value={email}
+              type="text" 
+              required  
+              onChange={(e) => {
+                setMail(e.target.value);
+              }}
+            />              
+            </FormGroup>
+           
+            <FormGroup controlId="formBasicPassword" >
+            <TextField 
+            sx={{  my : 2, width: '100%' }}
+              id="filled-basic" 
+              label="Enter Password" 
+              variant="outlined" 
+              type="password"
+              required
+              value={pass}
+              onChange={(e) => {
+                setPass(e.target.value);
+              }}
+            /> 
+            </FormGroup>
+              <center style={{ marginTop : '5vh'}}>
+            {user.length ? 
+            <Button variant="contained"  onClick={conditionalLogin} >
+              Login as {user}
             </Button>
-          </Form>
-        </Col>
-      </Row>
+            :
+            <Button variant="contained" href="#contained-buttons" disabled>
+              Login 
+            </Button>
+            }
+            </center>
+          </FormControl>
+          </center>
+        </Grid>
+      </Grid>
     </div>
   );
 };

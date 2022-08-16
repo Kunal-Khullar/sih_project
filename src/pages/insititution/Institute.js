@@ -5,6 +5,7 @@ import { useMutation, useQuery } from "@apollo/client";
 import {useState,useEffect} from 'react';
 import {UPLOAD_CSV} from '../../graphql/requests'
 import AWS from 'aws-sdk'
+import NavHome from '../../components/navbar/Nav';
 const Institute = () => {
   const [ins_id,setID] = useState("");
   const [subject,setSubject] = useState("");
@@ -47,6 +48,7 @@ const Institute = () => {
   
   return (
     <div>
+    <NavHome />
         <Form className="form-container" id="loginform">
 
           

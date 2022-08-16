@@ -10,7 +10,6 @@ const Navigator = () => {
          <Router>
         <Routes>
           <Route path="/" exact element={ <Login />} />{" "}
-          <Route path="/student" exact element={ <Student />} />{" "}
           <Route path="/institute" exact element={ <Institute />} />{" "}
           <Route path="/manager" exact element={ <Manager />} />{" "}
         </Routes>
