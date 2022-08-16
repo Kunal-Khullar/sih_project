@@ -1,6 +1,5 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes} from "react-router-dom";
-import Student from '../student/Student'
 import Institute from '../insititution/Institute'
 import Manager from '../manager/Manager'
 import Login from '../auth/Login'
