@@ -1,0 +1,36 @@
+body{
+    overflow-x: hidden;
+    /* background-image : url("bg1.jpg");
+    background-repeat:no-repeat;
+    background-size: cover; */
+    background-color: #fef8ff;
+}
+#loginrow {
+    padding: 2rem 4rem 2rem 4rem;
+}
+#loginform{
+    border-radius: 1rem;
+    width: 80%;
+    /* background: rgba( 255, 255, 255, 0.45 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12.5px );
+    -webkit-backdrop-filter: blur( 12.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 ); */
+    padding: 3rem;
+    height: 60vh;
+}
+#loginform .form-control{
+    margin-top: .1rem;
+    margin-bottom: 0.6rem;
+}
+
+
+@media (max-width: 600px){
+    img {
+        width: 100% !important;
+    }
+    .form-container #loginform{
+        width: 100%;
+    }
+}
