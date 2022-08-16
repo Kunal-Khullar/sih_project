@@ -48,7 +48,6 @@ const Institute = () => {
   
   return (
     <div>
-    <NavHome />
         <Form className="form-container" id="loginform">
 
           
