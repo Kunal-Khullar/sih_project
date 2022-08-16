@@ -22,7 +22,7 @@ const Institute = () => {
    
 
     const uploadFile = () => {
-      console.log(S3_BUCKET)
+     
         let file;
         const ref = document.getElementById('uploadedFile').files
         if(ref.length!=0){
@@ -30,23 +30,9 @@ const Institute = () => {
          console.log(file)
         }
         else{
-          console.log("lauda")
+          console.log("no")
           return
         }
-        const params = {
-            ACL: 'public-read',
-            Body: file,
-            Bucket: S3_BUCKET,
-            Key: file.name
-        };
-
-        myBucket.putObject(params)
-            .on('httpUploadProgress', (evt) => {
-                setProgress(Math.round((evt.loaded / evt.total) * 100))
-            })
-            .send((err) => {
-                if (err) console.log(err)
-            })
     }
   
   return (
